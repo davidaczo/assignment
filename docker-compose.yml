@@ -8,9 +8,9 @@ services:
       - 8080:8080
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock  # Mount Docker socket
-  front-end:
+  frontend:
     build:
-      context: front-end
+      context: frontend
       dockerfile: Dockerfile
     ports:
       - 80:3000

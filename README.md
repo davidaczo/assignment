@@ -4,6 +4,7 @@ Frontend:
 	-A simple frontend for starting OSINT scans with 2 tools: TheHarvester and Amass.
 	-For Amass scan only a domain name is requestet, for TheHarvester we need to select the datasource for scanning.
 	-If a scan is started it will show up in the History section.On the card only important informations are visible like begin time, domain name, tool name, etc... But if you want to see the scan's result you have to click on Details link on the bottom left corner.
+	
 	Usage:
 		-Download necessary dependencies with: npm install.
 		-Start the application by running: npm start.
