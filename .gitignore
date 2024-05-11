@@ -1,0 +1,15 @@
+# Ignore Node.js dependencies and build artifacts in the frontend folder
+front-end/node_modules
+front-end/build
+front-end/.env
+front-end/npm-debug.log
+front-end/yarn-error.log
+
+# Ignore IntelliJ IDEA files in both frontend and backend folders
+**/back-end/.idea/
+
+# Ignore Java Maven build artifacts in the backend folder
+back-end/target
+back-end/*.iml
+back-end/*.log
+back-end/.idea/
