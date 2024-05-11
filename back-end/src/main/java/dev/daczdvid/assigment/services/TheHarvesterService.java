@@ -74,6 +74,8 @@ public class TheHarvesterService {
             String output = outputBuffer.toString();
             List<String> domainsAndIps = extractDomainsAndIPs(output);
             List<String> emails = extractEmails(output);
+            List<String> users = extractUsers(output);
+            emails.addAll(users);
             String end = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")).toString();
 
             Scan result = new Scan(
@@ -124,4 +126,24 @@ public class TheHarvesterService {
         return emails;
     }
 
+    public static List<String> extractUsers(String output) {
+        List<String> users = new ArrayList<>();
+
+        // Pattern to match users and emails
+        String patternString = "(Users from Linkedin:.*?\\n)(.*?)(?=\\n\\n|$)";
+        Pattern pattern = Pattern.compile(patternString, Pattern.DOTALL);
+        Matcher matcher = pattern.matcher(output);
+
+        while (matcher.find()) {
+            String usersBlock = matcher.group(2).trim();
+            String[] tmpusers = usersBlock.split("\\n");
+
+            for (String user : tmpusers) {
+                if(user.contains(" - ")) {
+                    users.add(user);
+                }
+            }
+        }
+        return users;
+    }
 }

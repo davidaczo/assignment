@@ -66,7 +66,6 @@ const ScanForm = () => {
                                 <option value="baidu">baidu</option>
                                 <option value="bing">bing</option>
                                 <option value="duckduckgo">duckduckgo</option>
-                                <option value="Exalead">Exalead</option>
                                 <option value="google">google</option>
                                 <option value="linkedin">linkedin</option>
                                 <option value="threatcrowd">threatcrowd</option>
