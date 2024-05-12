@@ -64,7 +64,11 @@ If you are running the application on Windows, you need to change the Docker hos
 2. Download the dependencies.
 3. Build with Maven.
 4. Start the application.
+
+
 or
+
+
 1. Run `mvn clean package`.
 2. Execute `java -jar target/backend-app.jar`.
 
