@@ -12,8 +12,8 @@ const ScanCard = ({ scan, handleShowModal }) => {
             <Card.Body>
                 <Card.Title style={{ fontWeight: "bold", fontSize: "1.6rem", position: "relative" }}>
                     {scan.type === "theharvester" ? "The Harvester" : "Amass"}
-                    <span style={{ position: "absolute", top: "1.5rem", right: "2rem", fontSize: "0.8rem" }}>{scan.inProgress ? "In Progress" : "Done"}</span>
-                    <span style={{ position: "absolute", top: "1.5rem", right: "1rem", color: getStatusColor(), fontSize: "0.8rem" }}>•</span>
+                    <span style={{ position: "absolute", top: "0.5rem", right: "1rem", fontSize: "0.8rem" }}>{scan.inProgress ? "In Progress" : "Done"}</span>
+                    <span style={{ position: "absolute", top: "0.5rem", right: "0.5rem", color: getStatusColor(), fontSize: "0.8rem" }}>•</span>
                 </Card.Title>
                 <div style={{ marginTop: "1rem" }}>
                     <div style={{ fontWeight: 500, fontSize: "1.1rem", marginBottom: "0.5rem" }}>Domain: {scan.domain}</div>
