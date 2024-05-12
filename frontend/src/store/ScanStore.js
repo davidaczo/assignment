@@ -15,10 +15,7 @@ class ScanStore {
             startScan: action,
             setScans: action,
             pushToScans: action,
-            setShowModal: action,
             setSelectedScan: action,
-            handleCloseModal: action,
-            handleShowModal: action,
         });
     }
 
@@ -62,23 +59,10 @@ class ScanStore {
         this.scans.push(scan);
     }
 
-    setShowModal(value) {
-        this.showModal = value;
-    }
-
     setSelectedScan(scan) {
         this.selectedScan = scan;
     }
 
-    handleCloseModal() {
-        this.setShowModal(false);
-        this.setSelectedScan(null);
-    }
-
-    handleShowModal(scan) {
-        this.setSelectedScan(scan);
-        this.setShowModal(true);
-    }
 
     formatDate(date) {
         const year = date.getFullYear();

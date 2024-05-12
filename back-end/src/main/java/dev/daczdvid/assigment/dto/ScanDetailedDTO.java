@@ -20,7 +20,7 @@ public class ScanDetailedDTO {
 
     private String type;
 
-    private List<String> emails;
+    private List<String> emailsOrUsers;
 
     private List<String> subdomains;
 

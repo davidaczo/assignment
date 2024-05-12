@@ -8,19 +8,20 @@ import { scanStore } from "../../store/ScanStore";
 const ScanForm = () => {
 
     const [textInputValue, setTextInputValue] = useState("");
-    const [selectedOption, setSelectedOption] = useState("");
-    const [secondDropdownValue, setSecondDropdownValue] = useState("");
+    const [selectedToolOption, setSelectedToolOption] = useState("");
+    const [datasource, setDatasource] = useState("");
+
     const handleTextInputChange = (e) => setTextInputValue(e.target.value);
-    const handleOptionChange = (e) => setSelectedOption(e.target.value);
-    const handleSecondDropdownChange = (e) => setSecondDropdownValue(e.target.value);
+    const handleToolOptionChange = (e) => setSelectedToolOption(e.target.value);
+    const handleDatasourceChange = (e) => setDatasource(e.target.value);
 
     const handleSendRequest = () => {
-        scanStore.startScan(selectedOption, textInputValue, secondDropdownValue);
+        scanStore.startScan(selectedToolOption, textInputValue, datasource);
     };
 
     const isInputValid = (textInputValue.trim() !== "") &&
-        ((selectedOption === "amass") ||
-            (selectedOption === "theharvester" && secondDropdownValue !== ""));
+        ((selectedToolOption === "amass") ||
+            (selectedToolOption === "theharvester" && datasource !== ""));
 
 
     return (
@@ -42,8 +43,8 @@ const ScanForm = () => {
                         <Form.Label>Tool</Form.Label>
                         <Form.Control
                             as="select"
-                            value={selectedOption}
-                            onChange={handleOptionChange}
+                            value={selectedToolOption}
+                            onChange={handleToolOptionChange}
                         >
                             <option value="">Tools</option>
                             <option value="amass">Amass</option>
@@ -52,15 +53,15 @@ const ScanForm = () => {
                     </Form.Group>
                 </Col>
             </Row>
-            {selectedOption === "theharvester" && (
+            {selectedToolOption === "theharvester" && (
                 <Row className="mb-3">
                     <Col md={7}>
                         <Form.Group controlId="secondDropdown">
                             <Form.Label>Data Source</Form.Label>
                             <Form.Control
                                 as="select"
-                                value={secondDropdownValue}
-                                onChange={handleSecondDropdownChange}
+                                value={datasource}
+                                onChange={handleDatasourceChange}
                             >
                                 <option value="">Data sources</option>
                                 <option value="baidu">baidu</option>

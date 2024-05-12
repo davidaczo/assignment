@@ -16,13 +16,13 @@ const ScanModal = observer(({ showModal, handleCloseModal }) => {
                         <span>Status: {selectedScan.inProgress ? " inProgress" : " done"}</span>
                         <p>Domain: {selectedScan.domain}</p>
                         <p>Type: {selectedScan.type}</p>
-                        <p>Emails:</p>
+                        <p>Emails or LinkedIn users:</p>
                         <ul>
-                            {selectedScan.emails && selectedScan.emails.map((email, index) => (
+                            {selectedScan.emailsOrUsers && selectedScan.emailsOrUsers.map((email, index) => (
                                 <li key={index}>{email}</li>
                             ))}
                             {selectedScan.inProgress && <li>Scanning for emails...</li>}
-                            {selectedScan.emails && selectedScan.emails.length === 0 && <li>No emails found</li>}
+                            {selectedScan.emailsOrUsers && selectedScan.emailsOrUsers.length === 0 && <li>No emails or users found</li>}
                         </ul>
                         <p>Subdomains:</p>
                         <ul>

@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class ScanMapper {
 
     public static ScanMainDTO toDTO(Scan scan) {
-        int numberOfEmails = scan.getEmails() != null ? scan.getEmails().size() : 0;
+        int numberOfEmails = scan.getEmailsOrUsers() != null ? scan.getEmailsOrUsers().size() : 0;
         int numberOfSubdomains = scan.getSubdomains() != null ? scan.getSubdomains().size() : 0;
         return new ScanMainDTO(
                 scan.getId(),
@@ -36,7 +36,7 @@ public class ScanMapper {
                 scan.getDomain(),
                 scan.isInProgress(),
                 scan.getType(),
-                scan.getEmails(),
+                scan.getEmailsOrUsers(),
                 scan.getSubdomains(),
                 scan.getBegin(),
                 scan.getEnd()

@@ -19,7 +19,7 @@ public class ScanMainDTO {
 
     private String type;
 
-    private int numberOfEmails;
+    private int numberOfEmailsOrUsers;
 
     private int numberOfSubdomains;
 
