@@ -71,7 +71,3 @@ or
 
 1. Run `mvn clean package`.
 2. Execute `java -jar target/backend-app.jar`.
-
----
-
-This corrected version addresses the formatting issues, clarifies the instructions, and fixes any potential mistakes.
