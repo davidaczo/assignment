@@ -18,8 +18,6 @@ To initiate the Docker images locally, follow these steps:
 - Run the command `docker compose up`. This command will pull the necessary Docker images from Docker Hub and start the containers.
 
 **Note:** If you are running the application on a Windows machine, you need tochange the mounted volume in docker-compose.yml.
- Here's how:
-
 Change:
 
 ```plaintext
