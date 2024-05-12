@@ -17,7 +17,8 @@ To initiate the Docker images locally, follow these steps:
 
 - Run the command `docker compose up`. This command will pull the necessary Docker images from Docker Hub and start the containers.
 
-**Note:** If you are running the application on a Windows machine, you need to change the Docker host in `MyDockerClient` to `tcp://localhost:2375`. Here's how:
+**Note:** If you are running the application on a Windows machine, you need tochange the mounted volume in docker-compose.yml.
+ Here's how:
 
 Change:
 
@@ -56,7 +57,7 @@ To:
 
 ### Important Note for Windows Users
 
-If you are running the application on Windows, you need to change the Docker host in `MyDockerClient` to `"tcp://localhost:2375"`.
+If you are running the application on Windows locally, you need to change the Docker host in `MyDockerClient` to `"tcp://localhost:2375"`.
 
 ### Usage
 
